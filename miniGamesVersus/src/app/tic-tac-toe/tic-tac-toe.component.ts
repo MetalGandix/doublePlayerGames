@@ -21,21 +21,58 @@ export class TicTacToeComponent implements OnInit {
   giocatore1: Giocatore = new Giocatore();
   giocatore2: Giocatore = new Giocatore();
 
+  g1Move: boolean = false
+  g2Move: boolean = false
+
 
 
   sceltaUtente(a: any) {
     console.log(a)
-    if (a == 1) {
-      this.scelta = true
-    } else if (a == 2) {
-      this.scelta = false
+    var i = 1;
+    for (i; i < 10; i++) {
+      this.arrayMosse[i]
+      console.log(this.arrayMosse[i])
+      if(i == 1){
+        this.giocatore1.mossa = true
+        this.giocatore2.mossa = false
+      }else if (i == 2) {
+        this.giocatore1.mossa = false
+        this.giocatore2.mossa = true
+      } else if (i == 3) {
+        this.giocatore1.mossa = true
+        this.giocatore2.mossa = false
+      } else if (i == 4) {
+        this.giocatore1.mossa = false
+        this.giocatore2.mossa = true
+      } else if (i == 5) {
+        this.giocatore1.mossa = true
+        this.giocatore2.mossa = false
+      } else if (i == 6) {
+        this.giocatore1.mossa = false
+        this.giocatore2.mossa = true
+      } else if (i == 7) {
+        this.giocatore1.mossa = true
+        this.giocatore2.mossa = false
+      } else if (i == 8) {
+        this.giocatore1.mossa = false
+        this.giocatore2.mossa = true
+      } else if (i == 9) {
+        this.giocatore1.mossa = true
+        this.giocatore2.mossa = false
+      }
     }
   }
 
-  arrayNumericoColonna = [
-    1,
-    2,
-    3
+  arrayGriglia = [
+    {id: 0, position: 1},
+    {id: 1, position: 2},
+    {id: 2, position: 3},
+    {id: 3, position: 4},
+    {id: 4, position: 5},
+    {id: 5, position: 5},
+    {id: 6, position: 6},
+    {id: 7, position: 7},
+    {id: 8, position: 8},
   ]
 
   arrayMosse = [
@@ -50,40 +87,12 @@ export class TicTacToeComponent implements OnInit {
     9
   ]
 
+
+
   ngOnInit() {
-    var i = 1;
-    for (i; i < 10; i++) {
-      this.arrayMosse[i]
-      if (this.arrayMosse[1]) {
-        this.giocatore1.mossa = true
-        this.giocatore2.mossa = false
-      } else if (this.arrayMosse[2]) {
-        this.giocatore2.mossa = true
-        this.giocatore1.mossa = false
-      } else if (this.arrayMosse[3]) {
-        this.giocatore1.mossa = true
-        this.giocatore2.mossa = false
-      } else if (this.arrayMosse[4]) {
-        this.giocatore2.mossa = true
-        this.giocatore1.mossa = false
-      } else if (this.arrayMosse[5]) {
-        this.giocatore1.mossa = true
-        this.giocatore2.mossa = false
-      } else if (this.arrayMosse[6]) {
-        this.giocatore2.mossa = true
-        this.giocatore1.mossa = false
-      } else if (this.arrayMosse[7]) {
-        this.giocatore1.mossa = true
-        this.giocatore2.mossa = false
-      } else if (this.arrayMosse[8]) {
-        this.giocatore2.mossa = true
-        this.giocatore1.mossa = false
-      } else if (this.arrayMosse[9]) {
-        this.giocatore1.mossa = true
-        this.giocatore2.mossa = false
-      }
-    }
-    
+    console.log(this.arrayGriglia[0].position)
+    var a
+    this.sceltaUtente(a)
     this.matrix = [];
     for (this.i = 0; this.i < 4; this.i++) {
       this.matrix[this.i] = [];
